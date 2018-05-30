@@ -32,6 +32,16 @@ $(function() {
          * and that the URL is not empty.
          */
 
+         it('URL defined and not emtpy', () => {
+             allFeeds.forEach(element => {
+                //  expect(element.url).toBeDefined();
+                 expect(element.url.length).not.toBe(0);
+                 expect(element.url).toMatch("http");
+
+             });
+             
+         });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
