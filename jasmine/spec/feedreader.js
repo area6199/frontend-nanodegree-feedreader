@@ -34,7 +34,7 @@ $(function() {
 
          it('URL defined and not emtpy', () => {
              allFeeds.forEach(element => {
-                //  expect(element.url).toBeDefined();
+                expect(element.url).not.toBeUndefined();
                  expect(element.url.length).not.toBe(0);
                  expect(element.url).toMatch("http");
 
@@ -47,6 +47,17 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+         it('Name defined and not emtpy', () => {
+            allFeeds.forEach(element => {
+                expect(element.name).not.toBeUndefined();
+                expect(element.name.length).not.toBe(0);
+
+            });
+             
+         });
+
+
     });
 
 
