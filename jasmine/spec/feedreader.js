@@ -73,17 +73,32 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('menu element is hidden by default', () => {
-            const selector = document.querySelector(".menu-hidden");
-            console.log(selector);
-            expect(selector).not.toBeNull();
-            
+            const selector = document.querySelector(".slide-menu");
+            expect(selector.getBoundingClientRect().x/parseFloat(getComputedStyle(document.querySelector('body'))['font-size'])).toBe(-12);
+           
         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+          * clicked and does it hide when clickd again.
           */
+
+        // it('menu changes visibility', () => {
+        //     const selector = document.querySelector(".menu-hidden");
+        //     menuIcon = $('.menu-icon-link');
+        //     if (selector !== undefined) {
+        //         // menuIcon.on('click', function() {
+        //         //     $('body').toggleClass('menu-hidden');
+        //         // });
+        //         expect(selector).not.toBeNull();
+                              
+        //     }
+        //     else{
+
+        //     }
+                        
+        // });
     });     
 
     /* TODO: Write a new test suite named "Initial Entries" */
