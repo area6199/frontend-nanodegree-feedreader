@@ -137,6 +137,27 @@ $(function () {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        let feedText0;
+        let feedText1;
+
+        beforeEach((done) => {
+            loadFeed(0,() =>{
+                feedText0 = document.getElementsByClassName("feed")[0].textContent;
+                loadFeed(1,() =>{
+                    feedText1 = document.getElementsByClassName("feed")[0].textContent;
+                    done();
+                })
+            })
+            
+        });
+        
+
+        it('feed content actually changes', () => {
+            expect(feedText0).not.toBe(feedText1);
+            
+        });
+
+
 
     });
 
