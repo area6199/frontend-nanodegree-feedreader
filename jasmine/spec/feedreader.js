@@ -73,8 +73,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('menu element is hidden by default', () => {
-            const selector = document.querySelector(".slide-menu");
-            expect(selector.getBoundingClientRect().x/parseFloat(getComputedStyle(document.querySelector('body'))['font-size'])).toBe(-12);
+     
+            expect(document.querySelector(".menu-hidden")).not.toBe(null);
            
         });
 
@@ -84,22 +84,18 @@ $(function() {
           * clicked and does it hide when clickd again.
           */
 
-        // it('menu changes visibility', () => {
-        //     const selector = document.querySelector(".menu-hidden");
-        //     menuIcon = $('.menu-icon-link');
-        //     if (selector !== undefined) {
-        //         // menuIcon.on('click', function() {
-        //         //     $('body').toggleClass('menu-hidden');
-        //         // });
-        //         expect(selector).not.toBeNull();
-                              
-        //     }
-        //     else{
+        it('menu changes to visible', () => {
+            const menuIcon = document.getElementsByClassName('menu-icon-link')[0];
+ 
+            menuIcon.click();
+            expect(document.querySelector(".menu-hidden")).toBe(null);
+            menuIcon.click();
+            expect(document.querySelector(".menu-hidden")).not.toBe(null);
+        });
 
-        //     }
-                        
-        // });
     });     
+
+    
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
