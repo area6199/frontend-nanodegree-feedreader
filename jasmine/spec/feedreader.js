@@ -110,8 +110,39 @@ $(function () {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        // beforeEach((done) => {
+        //     loadFeed(0);
+        //     done();
+        // });
+
+        //  it('should loadfeed', (done) => {
+        //     expect(document.getElementsByClassName("feed")[0].childElementCount).toBeGreaterThan(0);
+        //     done();
+        //  });
+
+        // beforeEach(function(done) {
+        //     loadFeed(0,function() {
+        //         done();
+
+        //     });
+
+        // });
+
+        beforeEach((done) => {
+            loadFeed(0,() =>{
+                done();
+            })
+            
+        });
+
+         it('should loadfeed',(done) => {
+            expect(document.getElementsByClassName("feed")[0].childElementCount).toBeGreaterThan(0);
+            done();
+         });
 
     });
+
+
 
         /* TODO: Write a new test suite named "New Feed Selection" */
 
