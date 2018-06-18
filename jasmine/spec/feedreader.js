@@ -50,11 +50,12 @@ $(function () {
     describe('The menu', () => {
 
 
-        // This test nsures the menu element is hidden by default.
+        // This test ensures the menu element is hidden by default.
 
         it('menu element is hidden by default', () => {
 
-            expect(document.querySelector(".menu-hidden")).not.toBe(null);
+            expect(document.querySelector("body").classList.contains("menu-hidden")).toBe(true);
+
 
         });
 
