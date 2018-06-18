@@ -89,7 +89,8 @@ $(function () {
         });
 
         it('should loadfeed', (done) => {
-            expect(document.getElementsByClassName("feed")[0].childElementCount).toBeGreaterThan(0);
+            expect(document.getElementsByClassName("feed")[0].hasChildNodes()).toBe(true);
+        
             done();
         });
 
