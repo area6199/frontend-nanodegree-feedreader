@@ -65,9 +65,9 @@ $(function () {
             const menuIcon = document.getElementsByClassName('menu-icon-link')[0];
 
             menuIcon.click();
-            expect(document.querySelector(".menu-hidden")).toBe(null);
+            expect(document.querySelector("body").classList.contains("menu-hidden")).toBe(false);
             menuIcon.click();
-            expect(document.querySelector(".menu-hidden")).not.toBe(null);
+            expect(document.querySelector("body").classList.contains("menu-hidden")).toBe(true);
         });
 
     });
